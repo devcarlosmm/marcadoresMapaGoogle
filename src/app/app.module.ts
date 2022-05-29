@@ -12,13 +12,9 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { environment } from 'src/environments/environment';
 @NgModule({
-  declarations: [
-    AppComponent,
-    MapaComponent,
-    MapaEditarComponent
-  ],
+  declarations: [AppComponent, MapaComponent, MapaEditarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,11 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBjEjOzMrQkIQrWmX6I4AnGzGVkgb32-20'
-    })
-
+      apiKey: environment.googleApiKey,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
