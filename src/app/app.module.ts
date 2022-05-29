@@ -12,7 +12,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapaEditarComponent } from './components/mapa/mapa-editar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [AppComponent, MapaComponent, MapaEditarComponent],
   imports: [
@@ -22,7 +22,7 @@ import { environment } from 'src/environments/environment';
     MaterialModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.googleApiKey,
+      apiKey: process.env.GOOGLEAPIKEY,
     }),
   ],
   providers: [],
